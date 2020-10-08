@@ -5,11 +5,11 @@ namespace ElasticExample.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CatalogoController : ControllerBase
+    public class CatalogController : ControllerBase
     {
         private readonly ICatalogApplication _catalogApplication;
 
-        public CatalogoController(ICatalogApplication catalogApplication)
+        public CatalogController(ICatalogApplication catalogApplication)
         {
             _catalogApplication = catalogApplication;
         }
@@ -30,7 +30,7 @@ namespace ElasticExample.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("name")]
+        [HttpGet("getBySku")]
         public IActionResult GetByName([FromQuery] string sku)
         {
             var result = _catalogApplication.GetBySku(sku);
@@ -38,7 +38,7 @@ namespace ElasticExample.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet("description")]
+        [HttpGet("getByDescription")]
         public IActionResult GetByDescription([FromQuery] string description)
         {
             var result = _catalogApplication.GetByDescription(description);
