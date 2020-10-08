@@ -26,7 +26,7 @@ Para inserir os dados no elastic execute o endpoint http://localhost:5000/api/ca
 
 Para listar todos os dados execute o endpoint http://localhost:5000/api/catalog (GET)
 
-Resultado:
+Resposta:
 ```json
 [
     {
